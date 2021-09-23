@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Modal, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Modal, TouchableOpacity, StatusBar } from 'react-native';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 
 const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-3695136153697131/1664245625';
@@ -7,11 +7,12 @@ const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-3695136153697131/1664245
 export default function ModalStart() {
     const [visible, setVisible] = useState(true);
     return (
-        <View>
+        <View>       
             <Modal
                 animationType='slide'
                 visible={visible}
             ><View>
+                <StatusBar backgroundColor='rgb(120, 163, 173)' />
                     <Text style={styles.text}>Gasolina ou Etanol, qual abastecer?</Text>
                     <TouchableOpacity
                         style={styles.touch}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import Gasoline from './components/Gasoline';
 import Alcohol from './components/Alcohol';
 import ButtonCalculate from './components/ButtonCalculate';
@@ -54,6 +54,7 @@ export default function App() {
 
   return (
     <View style={styles.body}>
+      <StatusBar backgroundColor='rgb(120, 163, 173)' />
       <Modal />
       <Gasoline modify={sGasoline} />
       <Alcohol modify={sAlcohol} />
