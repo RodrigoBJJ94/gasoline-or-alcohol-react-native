@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default props => {
+export default function ButtonCalculate(props) {
     return (
         <View style={styles.block}>
             <TouchableOpacity

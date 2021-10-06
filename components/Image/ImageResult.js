@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 
-export default props => {
+export default function ImageResult(props) {
     return (
         <View style={styles.block}>
             {props.fuel === '' ?
@@ -9,12 +9,12 @@ export default props => {
                 :
                 props.fuel === 'G' ?
                     <Image
-                        source={require('../assets/img/bombG.png')}
+                        source={require('../../assets/img/bombG.png')}
                         style={styles.bomb}
                     />
                     :
                     <Image
-                        source={require('../assets/img/bombA.png')}
+                        source={require('../../assets/img/bombA.png')}
                         style={styles.bomb}
                     />
             }

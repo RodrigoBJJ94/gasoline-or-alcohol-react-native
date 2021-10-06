@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export default props => {
+export default function Result(props) {
     return (
         <View style={styles.block}>
             <Text style={styles.text}>Melhor combustível: {props.result}</Text>

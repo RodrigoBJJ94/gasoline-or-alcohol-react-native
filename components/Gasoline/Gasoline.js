@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
+import GasolineText from './GasolineText';
 
-export default props => {
+export default function Gasoline(props) {
     return (
         <View style={styles.block}>
-            <Text style={styles.text}>Digite o preço da Gasolina:</Text>
+            <GasolineText />
             <TextInput
                 style={styles.textInput}
                 keyboardType='numeric'
@@ -23,8 +24,5 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 4,
         height: 40,
-    },
-    text: {
-        marginBottom: 10,
     }
 });

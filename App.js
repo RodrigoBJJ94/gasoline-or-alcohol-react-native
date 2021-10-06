@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
-import Gasoline from './components/Gasoline';
-import Alcohol from './components/Alcohol';
-import ButtonCalculate from './components/ButtonCalculate';
-import Result from './components/Result';
-import ImageResult from './components/ImageResult';
+import { StyleSheet, View } from 'react-native';
+import Gasoline from './components/Gasoline/Gasoline';
+import Alcohol from './components/Alcohol/Alcohol';
+import ButtonCalculate from './components/Calculate/ButtonCalculate';
+import Result from './components/Result/Result';
+import ImageResult from './components/Image/ImageResult';
 import ModalMain from './components/Modal/ModalMain';
-import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
-
-const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-3695136153697131/9998617943';
+import StatusBarMain from './components/StatusBar/StatusBarMain';
+import Banner from './components/Banner/Banner';
 
 export default function App() {
   const [gasoline, setGasoline] = useState(0);
@@ -54,33 +53,21 @@ export default function App() {
 
   return (
     <View style={styles.body}>
-      <StatusBar backgroundColor='rgb(120, 163, 173)' />
+      <StatusBarMain />
       <ModalMain />
       <Gasoline modify={sGasoline} />
       <Alcohol modify={sAlcohol} />
       <ButtonCalculate click={calculate} />
       <Result result={result} />
       <ImageResult fuel={result.charAt(0)} />
-      <View style={styles.ads}>
-        <BannerAd
-          unitId={adUnitId}
-          size={BannerAdSize.LARGE_BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />
-      </View>
+      <Banner />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   body: {
     padding: 10,
     backgroundColor: 'white'
-  },
-  ads: {
-    alignItems: 'center',
-    marginTop: 159,
   }
 });
