@@ -5,7 +5,7 @@ import Alcohol from './components/Alcohol';
 import ButtonCalculate from './components/ButtonCalculate';
 import Result from './components/Result';
 import ImageResult from './components/ImageResult';
-import Modal from './components/Modal';
+import ModalMain from './components/Modal/ModalMain';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 
 const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-3695136153697131/9998617943';
@@ -55,7 +55,7 @@ export default function App() {
   return (
     <View style={styles.body}>
       <StatusBar backgroundColor='rgb(120, 163, 173)' />
-      <Modal />
+      <ModalMain />
       <Gasoline modify={sGasoline} />
       <Alcohol modify={sAlcohol} />
       <ButtonCalculate click={calculate} />
@@ -84,4 +84,3 @@ const styles = StyleSheet.create({
     marginTop: 159,
   }
 });
-
