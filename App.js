@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import Gasoline from './components/Gasoline/Gasoline';
 import Alcohol from './components/Alcohol/Alcohol';
 import ButtonCalculate from './components/Calculate/ButtonCalculate';
@@ -16,13 +16,14 @@ export default function App() {
 
   const calculate = () => {
     if (!gasoline) {
-      alert('Informe o preço da gasolina!');
+      Alert.alert('Informe o preço da gasolina!');
       return;
-    }
+    };
+
     if (!alcohol) {
-      alert('Informe o preço do etanol!');
+      Alert.alert('Informe o preço do etanol!');
       return;
-    }
+    };
 
     let res;
     let calc = ((alcohol / gasoline) * 100).toFixed(1);
@@ -31,10 +32,10 @@ export default function App() {
       res = 'Gasolina';
     } else {
       res = 'Etanol';
-
     };
+    
     setResult(res);
-    alert(`O Etanol está custando ${calc}% da Gasolina. ${res} está valendo mais a pena. `);
+    Alert.alert(`Melhor combustível`, `O Etanol está custando ${calc}% da Gasolina. ${res} está valendo mais a pena. `);
   };
 
   const clean = () => {
