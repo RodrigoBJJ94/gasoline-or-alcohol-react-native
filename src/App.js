@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
+import Styles from './Styles';
+import { Alert, View } from 'react-native';
 import Gasoline from './components/Gasoline/Gasoline';
 import Alcohol from './components/Alcohol/Alcohol';
 import ButtonCalculate from './components/Calculate/ButtonCalculate';
@@ -33,7 +34,7 @@ export default function App() {
     } else {
       res = 'Etanol';
     };
-    
+
     setResult(res);
     Alert.alert(`Melhor combustível`, `O Etanol está custando ${calc}% da Gasolina. ${res} está valendo mais a pena. `);
   };
@@ -53,7 +54,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.body}>
+    <View style={Styles.body}>
       <StatusBarMain />
       <ModalMain />
       <Gasoline modify={sGasoline} />
@@ -65,10 +66,3 @@ export default function App() {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  body: {
-    padding: 10,
-    backgroundColor: 'white'
-  }
-});

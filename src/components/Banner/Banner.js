@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import Styles from './Styles';
+import { View } from 'react-native';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 
 const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-3695136153697131/9998617943';
 
 export default function Banner() {
     return (
-        <View style={styles.ads}>
+        <View style={Styles.ads}>
             <BannerAd
                 unitId={adUnitId}
                 size={BannerAdSize.LARGE_BANNER}
@@ -14,10 +15,3 @@ export default function Banner() {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    ads: {
-        alignItems: 'center',
-        marginTop: 159,
-    }
-});
