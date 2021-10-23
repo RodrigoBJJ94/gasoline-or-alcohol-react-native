@@ -2,22 +2,17 @@ import React from 'react';
 import Styles from './Styles';
 import { View, Image, Text } from 'react-native';
 
-export default function ImageResult(props) {
+export default function ImageResult({ fuel }) {
     return (
         <View style={Styles.block}>
-            {props.fuel === '' ?
-                <Text></Text>
-                :
-                props.fuel === 'G' ?
-                    <Image
+            {fuel === '' ? <Text></Text>
+                : fuel === 'G'
+                    ? <Image
                         source={require('../../assets/img/bombG.png')}
-                        style={Styles.bomb}
-                    />
-                    :
-                    <Image
+                        style={Styles.bomb} />
+                    : <Image
                         source={require('../../assets/img/bombA.png')}
-                        style={Styles.bomb}
-                    />
+                        style={Styles.bomb} />
             }
         </View>
     );

@@ -7,6 +7,7 @@ import ModalBanner from './ModalBanner';
 
 export default function ModalMain() {
     const [visible, setVisible] = useState(true);
+
     return (
         <View>
             <Modal animationType='slide' visible={visible}>
