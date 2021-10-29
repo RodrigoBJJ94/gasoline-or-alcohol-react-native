@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     ads: {
         alignItems: 'center',
-        marginTop: 285,
+        marginTop: 332,
     },
     touch: {
         backgroundColor: 'rgb(120, 163, 173)',
@@ -12,11 +12,14 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     textTouch: {
-        fontSize: 18,
-    }, text: {
-        textAlign: 'center',
         fontSize: 20,
-        marginBottom: 30,
-        marginTop: 60
+        fontWeight: 'bold',
+        color: '#fff',
     },
+    text: {
+        textAlign: 'center',
+        fontSize: 20.5,
+        marginBottom: 50,
+        marginTop: 80
+    }
 });

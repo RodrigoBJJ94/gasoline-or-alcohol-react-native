@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from './Styles';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Alert } from 'react-native';
+import Button from './Button';
 
 export default function ButtonCalculate({ gasoline, alcohol, setResult }) {
     const calculate = () => {
@@ -29,9 +30,7 @@ export default function ButtonCalculate({ gasoline, alcohol, setResult }) {
 
     return (
         <View style={Styles.block}>
-            <TouchableOpacity style={Styles.button} onPress={calculate}>
-                <Text style={Styles.buttonText}>Calcular</Text>
-            </TouchableOpacity>
+            <Button calculate={calculate} />
         </View>
     );
 };

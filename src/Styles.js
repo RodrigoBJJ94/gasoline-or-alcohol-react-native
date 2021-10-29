@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    body: {
+    container: {
         padding: 10,
-        backgroundColor: 'white'
+        backgroundColor: '#fff'
     }
 });

@@ -8,7 +8,6 @@ import Result from './components/Result/Result';
 import ImageResult from './components/Image/ImageResult';
 import ModalMain from './components/Modal/ModalMain';
 import StatusBarMain from './components/StatusBar/StatusBarMain';
-import Banner from './components/Banner/Banner';
 
 export default function App() {
   const [gasoline, setGasoline] = useState(0);
@@ -20,7 +19,7 @@ export default function App() {
   };
 
   return (
-    <View style={Styles.body}>
+    <View style={Styles.container}>
       <StatusBarMain />
       <ModalMain />
       <Gasoline clean={clean} setGasoline={setGasoline} />
@@ -28,7 +27,6 @@ export default function App() {
       <ButtonCalculate gasoline={gasoline} alcohol={alcohol} setResult={setResult} />
       <Result result={result} />
       <ImageResult fuel={result.charAt(0)} />
-      <Banner />
     </View>
   );
 };

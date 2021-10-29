@@ -1,7 +1,8 @@
 import React from 'react';
 import Styles from './Styles';
-import { View, TextInput } from 'react-native';
-import AlcoholText from './AlcoholText';
+import { View } from 'react-native';
+import Text from './Text';
+import Input from './Input';
 
 export default function Alcohol({ clean, setAlcohol }) {
     const sAlcohol = (value) => {
@@ -11,8 +12,8 @@ export default function Alcohol({ clean, setAlcohol }) {
 
     return (
         <View style={Styles.block}>
-            <AlcoholText />
-            <TextInput style={Styles.textInput} keyboardType='numeric' onChangeText={text => sAlcohol(text)} />
+            <Text />
+            <Input sAlcohol={sAlcohol} />
         </View>
     );
 };
